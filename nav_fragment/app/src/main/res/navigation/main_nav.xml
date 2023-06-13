@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav"
+    app:startDestination="@id/firstBlankFragment">
+
+    <fragment
+        android:id="@+id/firstBlankFragment"
+        android:name="com.hwido.nav_fragment.FirstBlankFragment"
+        android:label="fragment_first_blank"
+        tools:layout="@layout/fragment_first_blank" >
+        <action
+            android:id="@+id/action_firstBlankFragment_to_secondBlankFragment"
+            app:destination="@id/secondBlankFragment" />
+        <action
+            android:id="@+id/action_firstBlankFragment_to_thirdBlankFragment"
+            app:destination="@id/thirdBlankFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/secondBlankFragment"
+        android:name="com.hwido.nav_fragment.SecondBlankFragment"
+        android:label="fragment_second_blank"
+        tools:layout="@layout/fragment_second_blank" >
+        <action
+            android:id="@+id/action_secondBlankFragment_to_firstBlankFragment"
+            app:destination="@id/firstBlankFragment" />
+        <action
+            android:id="@+id/action_secondBlankFragment_to_thirdBlankFragment"
+            app:destination="@id/thirdBlankFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/thirdBlankFragment"
+        android:name="com.hwido.nav_fragment.ThirdBlankFragment"
+        android:label="fragment_third_blank"
+        tools:layout="@layout/fragment_third_blank" >
+        <action
+            android:id="@+id/action_thirdBlankFragment_to_secondBlankFragment"
+            app:destination="@id/secondBlankFragment" />
+        <action
+            android:id="@+id/action_thirdBlankFragment_to_firstBlankFragment"
+            app:destination="@id/firstBlankFragment" />
+    </fragment>
+</navigation>
