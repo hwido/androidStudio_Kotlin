@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "954889785643",
+    "project_id": "fb-login-test-2e65e",
+    "storage_bucket": "fb-login-test-2e65e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:954889785643:android:f60fc2a6df5e072d6f756e",
+        "android_client_info": {
+          "package_name": "com.hwido.fb_login_test"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "954889785643-p228vi0iiro6igi06v5uf9067gs60el7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCWqQakZWJwoiH2DwVMH4HwCsN0NNSOdow"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "954889785643-p228vi0iiro6igi06v5uf9067gs60el7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

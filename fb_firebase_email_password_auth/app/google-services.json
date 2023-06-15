@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "87683431365",
+    "project_id": "fir-email-password-auth-82e49",
+    "storage_bucket": "fir-email-password-auth-82e49.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:87683431365:android:432efe2f8559eaf0d969ac",
+        "android_client_info": {
+          "package_name": "com.hwido.fb_firebase_email_password_auth"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "87683431365-pv0kkvcmsjrucpm8j62mcnqe4nmkkp7r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCKAiFLs4N6imRdXbu7gGO2eXxrh7LoQmY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "87683431365-pv0kkvcmsjrucpm8j62mcnqe4nmkkp7r.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
