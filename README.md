@@ -10,6 +10,7 @@ https://developer.android.com/?hl=ko -> 안드로이드 공식문서
 
 단점이 존재한다. => adapter 통해 getview 메소드 호출하여 view 생성. 화면 로딩 이후 스크롤 사용 등 액션 취하면 findViewById통해 요소를 찾게 되고, 그에 따라 리소스 사용 많아진다.
 즉, 속도가 느려지는 것이다. 점점 부자연스럽고 끊기는 모습을 볼 수 있게 되는 것이다.
+
 이에 대한 해결책?으로 recyclerview 존재한다.
 
 [recycleView에 대한 이해]
