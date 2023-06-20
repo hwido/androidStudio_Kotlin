@@ -5,6 +5,7 @@ https://developer.android.com/?hl=ko -> 안드로이드 공식문서
 [ListView에 대한 이해]
 
 스크롤 가능한 항목을 나타날 때 사용된다. view를 배치한 후, 데이터가 저장도니 곳에서 view의 형식에 맞게 변환하여 데이터를 가져온다.
+
 데이터 클래스 정의 -> 레이아웃에 listview 추가 -> item 생성 -> adapter 생성, 설정
 
 단점이 존재한다. => adapter 통해 getview 메소드 호출하여 view 생성. 화면 로딩 이후 스크롤 사용 등 액션 취하면 findViewById통해 요소를 찾게 되고, 그에 따라 리소스 사용 많아진다.
