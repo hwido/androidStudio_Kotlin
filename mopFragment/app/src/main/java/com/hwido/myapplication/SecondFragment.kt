@@ -1,12 +1,17 @@
 package com.hwido.myapplication
 
+import android.R
+import android.content.Context
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
 import com.hwido.myapplication.databinding.FragmentFirstBinding
+import com.hwido.myapplication.databinding.FragmentSecondBinding
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -15,14 +20,26 @@ private const val ARG_PARAM2 = "param2"
 
 /**
  * A simple [Fragment] subclass.
- * Use the [FirstFragment.newInstance] factory method to
+ * Use the [SecondFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class FirstFragment : Fragment() {
+class SecondFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
-    lateinit var binding:FragmentFirstBinding
+    lateinit var binding: FragmentSecondBinding
+    lateinit var callback:SecondFragment.Callbacks
+    val myList = listOf("C", "C++", "C#", "Java", "Javascript", "Kotlin", "GoLang")
+
+    interface Callbacks{
+        fun onItemPrint(num:String)
+    }
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        callback = context as Callbacks
+    }
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,6 +47,7 @@ class FirstFragment : Fragment() {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
         }
+        Log.d("ITM", "second fragment created")
     }
 
     override fun onCreateView(
@@ -37,9 +55,30 @@ class FirstFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        binding = FragmentFirstBinding.inflate(inflater, container, false)
+        binding = FragmentSecondBinding.inflate(inflater, container, false)
         Log.d("ITM", "${param1+param2}")
+        Log.d("ITM", "second fragment view created")
+
+        val myAdapter = ArrayAdapter<String>(requireContext(), R.layout.simple_list_item_1, myList)
+        binding.spinner.adapter = myAdapter
+        binding.spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
+                callback.onItemPrint(myList.get(p2))
+            }
+            override fun onNothingSelected(p0: AdapterView<*>?) {}
+        }
+
         return binding.root
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        Log.d("ITM", "second fragment view destroyed")
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.d("ITM", "second fragment destroyed")
     }
 
     companion object {
@@ -49,12 +88,12 @@ class FirstFragment : Fragment() {
          *
          * @param param1 Parameter 1.
          * @param param2 Parameter 2.
-         * @return A new instance of fragment FirstFragment.
+         * @return A new instance of fragment SecondFragment.
          */
         // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
-            FirstFragment().apply {
+            SecondFragment().apply {
                 arguments = Bundle().apply {
                     putString(ARG_PARAM1, param1)
                     putString(ARG_PARAM2, param2)
